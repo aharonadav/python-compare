@@ -7,7 +7,7 @@ print
 print """
 <html>
 <head>
-  <title>Aharon-Python Script</title>
+  <title>מערכת התאמות.</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -21,17 +21,21 @@ print """
   <script src="http://code.jquery.com/jquery-2.0.3.js"></script>
 </head>
 <body>
+
 <div class="container">
   <div class="jumbotron">
-    <center><h2>Aharon Python Script</h2></center>
-    <p>Instance replacement</p>
+    <center><h2>,שלום חנשוש</h2></center>
+      <center><h2>! וברוכה הבאה למערכת ההתאמות</h2></center>
   </div>
   <hr>
-  
-<div class="form-group">
-  <label for="cmd">Command:</lable>
-  <input type="text" class="form-control" id="cmd">
-</div>
+
+<h4>: בחרי קובץ להעלאה יפה שלי </h4>
+
+<form id="uploadbanner" enctype="multipart/form-data" method="post" action="#">
+   <input id="fileupload" name="myfile" type="file" />
+   <input type="submit" value="...טען" id="submit" />
+</form>
+
 <div class="row">
    <div class="col-md-4">
 	<div class="form-group">
@@ -72,6 +76,19 @@ print """
   </div>
 </body>
 <script>
+
+var form = document.getElementById('file-form');
+var fileSelect = document.getElementById('file-select');
+var uploadButton = document.getElementById('upload-button');
+
+form.onsubmit = function(event) {
+  event.preventDefault();
+
+// Update button text.
+uploadButton.innerHTML = 'Uploading...';
+
+// Get the selected files from the input.
+var files = fileSelect.files;
 $("#MyButton").click( function(){
   $.ajax({
 	url: "run.php",
